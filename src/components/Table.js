@@ -8,7 +8,7 @@ const Table = () => {
 	const [checkCount, setCheckCount] = useState(0)
 
 	useEffect(() => {
-	   	fetch("https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json")
+	   fetch("https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json")
 	      .then(res => res.json())
 	      .then(res => setData(res))
 	      .catch(err => setErrors(err))
@@ -54,7 +54,7 @@ const Table = () => {
 			}
 		}
 
-		return total.toFixed(2);
+		return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 	const handleAllCheck = (event) => {
@@ -89,11 +89,11 @@ const Table = () => {
 			<thead>
 				<tr>
 					<th><input type="checkbox" onClick={event => handleAllCheck(event)}/></th>
-					<th className="table-header">Creditor</th>
-					<th className="table-header">First Name</th>
-					<th className="table-header">Last Name</th>
-					<th className="table-header">Min Pay%</th>
-					<th className="table-header">Balance</th>
+					<th className="table-header" style={{textAlign: "left"}}>Creditor</th>
+					<th className="table-header" style={{textAlign: "left"}}>First Name</th>
+					<th className="table-header" style={{textAlign: "left"}}>Last Name</th>
+					<th className="table-header" style={{textAlign: "right"}}>Min Pay%</th>
+					<th className="table-header" style={{textAlign: "right"}}>Balance</th>
 				</tr>
 			</thead>
 			{renderData()}

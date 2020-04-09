@@ -1,9 +1,9 @@
 table {
-   /* border-collapse: collapse; */
+   width: 800px
 }
 
 .table-header {
-   padding: 15px 5px;
+   padding: 15px 0px;
    border: 1px solid;
 }
 
@@ -14,6 +14,11 @@ table {
 .balance {
    text-align: right;
    font-weight: bold;
+}
+
+#balance-col {
+   text-align: right;
+   width: 20%
 }
 
 .button-debt {
